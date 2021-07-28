@@ -1,0 +1,201 @@
+
+{%extends 'product/base.html'%}
+{% block content%}
+{% load static%}
+
+<!-- Product -->
+
+
+
+
+        <div class="product_collection">
+          <div class="filter">
+            <form action="" method="get">{% csrf_token %}
+            <h1>Filter</h1>
+            <div class="filter_types">
+              <h5>Collections</h5>
+              <div>
+                <input type="checkbox" id="engagement rings" name="category" value="1">
+                <label for="engagement rings">Engagement Rings</label></br>
+                <input type="checkbox" id="diamonds" name="category" value="2">
+                <label for="diamonds">Diamonds</label></br>
+
+              </div>
+            </div>
+            <div class="filter_types price">
+              <h5>Price</h5>
+              <input type="number" placeholder="Min" min="0" name="price__gte" >
+              <br><br>
+              <input type="number" placeholder="Max" min="0" name="price__lte" >
+
+            </div>
+            <div class="filter_types">
+              <h5>Color</h5>
+              <input type="checkbox" name="color" value="Blue"> Blue</br>
+              <input type="checkbox" name="color" value="1"> White</br>
+              <input type="checkbox" name="color" value="Green"> Green
+
+            </div>
+            <div class="filter_types">
+              <h5>Size</h5>
+              <input type="checkbox" name="size" value="2"> Large</br>
+              <input type="checkbox" name="size" value="1"> Medium</br>
+              <input type="checkbox" name="size" value="4"> Custom</br>
+              <input type="checkbox" name="size" value="3"> Small
+            </div>
+            <div class="submit_btn">
+                <button type="submit">Apply</button>
+                <a href="/collections"><button  name="button">Clear Filters</button></a>
+            </div>
+            </form>
+          <div class="spacer"></div>
+          </div>
+          <div class="collection_products">
+            <div class="selects">
+              <div class="select">
+                <a type="button" class="btn btn-outline-dark filter_btn">Filter By</a>
+              </div>
+              <div class="select">
+                <!-- <select class="form-control">
+                  <option>Sort By</option>
+                  <option>Default select</option>
+                  <option>Default select</option>
+                </select> -->
+              </div>
+            </div>
+          <div class="collection_items">
+
+        {% for post in object_list %}
+
+            <a href="{% url 'product' post.pk %}"><div title="{{post.title}}" class="product_item">
+              <img src="{{post.image_small.url}}" alt="">
+              <div class="product_item_info">
+                <div class="item_title">
+                  <p>{{post.title}}</p>
+                </div>
+                <span></span>
+                <p class="price_tag">${{post.price}}</p>
+              </div>
+            </div></a>
+        {% endfor%}
+
+
+
+
+            <!-- <a href="/product"><div class="product_item">
+              <img src="{%static 'product/assets/collection_1.webp'%}" alt="">
+              <div class="product_item_info">
+                <div class="item_title">
+                  <p>Green Amethyst Diamond Necklace Necklace Necklace </p>
+                </div>
+                <span></span>
+                <p class="price_tag">$909</p>
+              </div>
+            </div></a> -->
+
+
+
+          </div>
+          </div>
+        </div>
+
+
+
+<!-- Footer -->
+<footer>
+<div class="location">
+  <h2>Location</h2>
+  <p>Our collection and showroom is available at our East Cobb location</p>
+  <p>4651 Woodstock Rd #207, Roswell, GA 30075</p>
+</div>
+<div class="contact">
+  <h2>Contact Us</h2>
+  <p>770-643-9066</p>
+  <p>djdiamonds@bellsouth.net</p>
+</div>
+<div class="socials">
+  <h2>Socials</h2>
+  <a><i class="fab fa-facebook"></i></a>
+  <a><i class="fab fa-twitter"></i></a>
+  <a><i class="fab fa-instagram"></i></a>
+</div>
+</footer>
+<!-- Footer -->
+<!-- copyright -->
+<div class="copyright">
+  <p>	&copy;Copyright 2019</p>
+</div>
+<!-- copyright -->
+<!-- nav up -->
+<div id="up" class="nav_up">
+  <a href="#catch"><i class="fas fa-arrow-circle-up"></i></a>
+</div>
+<!-- scripts -->
+<script src="https://kit.fontawesome.com/d43fb7b338.js" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- scripts -->
+<script type="text/javascript">
+$('.owl-carousel').owlCarousel({
+  margin:10,
+  loop:true,
+  autoWidth:true,
+  nav:true,
+  navText : ['<i class="fa fa-angle-left left_carousel" aria-hidden="true"></i>','<i class="fa fa-angle-right right_carousel" aria-hidden="true"></i>'],
+  items:4
+})
+
+// -----------------------------------------
+
+
+// ------------------------------------------------------------------
+
+
+var toggleButton  = document.querySelector('.toggle_bar')
+var navbarlinks  = document.querySelector('.menu_m')
+
+
+toggleButton.addEventListener('click',()=>{
+	if(navbarlinks.classList.toggle('active')){
+		navbarlinks.style.marginTop="0"
+	}
+	else{
+		navbarlinks.style.marginTop="-375px"
+	}
+})
+//-----------------------------------------------------------------
+
+
+
+// ------------------------------------------------------------
+var toggleButton2  = document.querySelector('.filter_btn')
+var navbarlinks2  = document.querySelector('.filter')
+
+
+toggleButton2.addEventListener('click',()=>{
+	if(navbarlinks2.classList.toggle('active')){
+		navbarlinks2.style.left="0"
+	}
+	else{
+		navbarlinks2.style.left="-"+screen.width+'px'
+	}
+})
+//----------------------------------------------------------------------
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script></body>
+</html>
+
+<!-- Product -->
+{% endblock content%}

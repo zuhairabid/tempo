@@ -1,0 +1,259 @@
+@media only screen and (min-width: 1000px) {
+  .container{
+    width:100%;
+    margin:0;
+  }
+}
+@media only screen and (max-width: 866px) {
+  .contact_us .two_input input{
+    width:44%;
+  }
+  .contact_us .text_input >*{
+    width: 90%;
+
+  }
+  .slider-banner {
+    transform: scale(.7);
+    margin-left: -72px;
+    margin-bottom: -21px;
+}
+}
+@media only screen and (max-width: 758px) {
+  .container2{
+    width:100%;
+
+  }
+  .gallery{
+
+    padding: 50px 20px;
+  }
+  .imgs{
+    width: 100%;
+
+  }
+}
+@media only screen and (max-width: 726px){
+  .logo p{
+    display:none
+  }
+  .logo p.alter{
+    display: block;
+    line-height: 1.1;
+    font-size: 30px;
+}
+  }
+}
+@media only screen and (min-width: 1088px) {
+  section.about .about_container{
+
+    /* align-items: center; */
+    flex-direction: column;
+    /* justify-content: center; */
+
+  }
+  section.about .about_container div{
+    width:80%;
+    margin: auto;
+  }
+  section.about .about_container .about_text p{
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 644px) {
+  section.about .about_image img{
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 534px) {
+  section.about .about_image img{
+    height: 280px;
+  }
+  .slider-banner {
+    transform: scale(.4);
+    margin-left: -99px;
+    margin-bottom: -14px;
+}
+
+}
+@media only screen and (max-width: 496px) {
+  section.about .about_image img{
+    height: 200px;
+
+  }
+  section.about .about_image .about_bg_design{
+    display:none
+  }
+  section.about .about_image .about_img_2 {
+    margin-left: 33px;
+
+}
+}
+@media only screen and (max-width: 346px) {
+  section.about .about_image img{
+    height: 170px;
+  }
+}
+@media only screen and (max-width: 286px) {
+  section.about .about_image img{
+    height: 120px;
+  }
+}
+
+
+/* -------------------- */
+@media only screen and (max-width: 1326px) {
+  /* .menu{
+    display: none;
+  } */
+  .toggle_bar{
+    display: block;
+  }
+  .menu{
+    display: none;
+  }
+  .product_title{
+    flex-direction: column;
+
+  }
+  .photo_title{
+    margin-top: 60px;
+  }
+  .product_container{
+    width:90%;
+
+  }
+  .photo{
+    margin-right:0px;
+  }
+
+}
+/* ---------------product.html-------------- */
+@media only screen and (max-width: 1400px) {
+
+  .product_collection{
+    width:100%;
+
+
+  }
+
+}
+@media only screen and (max-width: 1300px) {
+
+  .product_collection .filter{
+    width:30%;
+    /* height: 100%; */
+
+  }
+
+  .product_collection .collection_items{
+    /* width: 70%; */
+    /* grid-template-columns: 33.33% 33.33% 33.33%; */
+  }
+  .product_collection .collection_products{
+    width: 70%;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+  }
+
+}
+@media only screen and (max-width: 1048px) {
+
+  .product_collection .filter{
+    width:30%;
+
+  }
+
+  .product_collection .collection_items{
+    /* width: 70%; */
+    grid-template-columns: 50% 50%;
+  }
+  .product_collection .collection_products{
+    width: 70%;
+    /* grid-template-columns: auto auto auto; */
+  }
+
+
+}
+@media only screen and (max-width: 670px) {
+  .filter_btn{
+    display: inline;
+  }
+  .product_collection .filter{
+    width: 100%;
+    position: absolute;
+    top: 183px;
+    left: 0;
+    padding: 0px 43px;
+    background: white;
+    left:-1000px;
+    height: 105%;
+  }
+  .product_collection .collection_products{
+    width:100%
+  }
+
+}
+@media only screen and (max-width: 504px) {
+
+  .menubar{
+    width: 100%;
+  }
+
+  .product_collection .collection_items{
+    /* width: 70%; */
+    grid-template-columns: 50% 50%;
+  }
+  .product_collection .collection_products{
+    width: 100%;
+    /* grid-template-columns: auto auto auto; */
+  }
+
+  footer{
+    padding: 115px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  footer>div{
+    margin-top: 30px;
+    width: 80%
+  }
+  footer p{
+    width:100%
+  }
+}
+@media only screen and (max-width: 1100px) {
+
+  section.about .about_container{
+    flex-direction: column;
+  }
+  section.about .about_container div{
+    width:90%
+  }
+  section.about .about_text p{
+    width:100%
+  }
+}
+@media only screen and (max-width: 409px) {
+  .logo img {
+    width: 100px;
+}
+.logo p {
+    margin-left: 0;
+}
+.logo p.alter {
+    font-size: 24px;
+}
+}
+@media only screen and (max-width: 328px) {
+
+.logo p.alter {
+    font-size: 19px;
+}
+}
+@media only screen and (max-width: 355px) {
+
+  .collections_carousel {
+      width: 91%;
+
+  }
+}

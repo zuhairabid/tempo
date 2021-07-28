@@ -1,0 +1,377 @@
+{%extends 'product/base.html'%}
+{% block content%}
+{% load static%}
+  <!-- Slider -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{%static 'product/assets/slider1.png'%}" class="d-block w-100" alt="...">
+    <div class="carousel-caption slider-banner">
+      <h1 class="frst-line">Welcome to</h1>
+      <h1 class="secnd-line">Rita's Collection</h1>
+      <p>Here at Rita's Collection, we provide all types of jewelry, jewelry repairs, and custom design works for everyone.</p>
+      <a href="#contact_us">Contact Us</a>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'product/assets/slider2.png'%}" class="d-block w-100" alt="...">
+      <div class="carousel-caption slider-banner">
+        <h1 class="frst-line">Welcome to</h1>
+        <h1 class="secnd-line">Rita's Collection</h1>
+        <p>Here at Rita's Collection, we provide all types of jewelry, jewelry repairs, and custom design works for everyone.</p>
+        <a href="#contact_us">Contact Us</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'product/assets/slider3.png'%}" class="d-block w-100" alt="...">
+      <div class="carousel-caption slider-banner">
+        <h1 class="frst-line">Welcome to</h1>
+        <h1 class="secnd-line">Rita's Collection</h1>
+        <p>Here at Rita's Collection, we provide all types of jewelry, jewelry repairs, and custom design works for everyone.</p>
+        <a href="#contact_us">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{%static 'product/assets/slider4.png'%}" class="d-block w-100" alt="...">
+      <div class="carousel-caption slider-banner">
+        <h1 class="frst-line">Welcome to</h1>
+        <h1 class="secnd-line">Rita's Collection</h1>
+        <p>Here at Rita's Collection, we provide all types of jewelry, jewelry repairs, and custom design works for everyone.</p>
+        <a href="#contact_us">Contact Us</a>
+      </div>
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  <!-- Slider -->
+
+
+<!-- Section 1 -->
+<section id="about" class="about">
+  <div class="about_title">
+  <h1 class="heading">About Us</h1>
+  <span></span>
+  <h5>Welcome to the world of Jwelery</h5>
+  </div>
+    <div class="about_container">
+
+      <div class="about_image">
+
+        <img class="about_img_1" src="{%static 'product/assets/AboutUsModel2.png'%}" alt="">
+<span class="about_bg_design"></span>
+        <img class="about_img_2" src="{%static 'product/assets/AboutUsModel1.png'%}" alt="">
+
+      </div>
+      <div class="about_text">
+        <h1 class="tangerine">Rita's <span class="about_title_excp">Colllection</span></h1>
+        <p class="content_text">Here at K1 Jewelers, we provide all types of jewelry, jewelry repairs, and custom design works for everyone. We work with special orders including custom designs of pendents, necklaces, rings, earrings, bracelets, and watches. We have a vast variety of items and merchandise jewelry in our showroom. We also buy gold and resale items. We provide appraisals and engagement/wedding bands and rings. Any customers needing jewelry repairs, watch batteries, eye-glasses repair, and resizing jewelry can be all done here at K1.</p>
+        <p>We have been in business for the past 30 years in the East Cobb, Georgia area. We provide excellent service and care of our customer's jewelry and merchandise. We are passionate in what we do and love the work we put in to give you the most satisfying piece of joy. Come by and get something special for your friends, family, and loved ones! We are your friendly neighbor Jeweler!</p>
+      </div>
+
+    </div>
+
+</section>
+<!-- Section 1 -->
+
+
+
+
+
+
+<!-- section 2 -->
+<div class="collections">
+  <div class="colllections_title">
+    <h1 class="heading">K1 Jwellers Collections</h1>
+    <span></span>
+    <p>Get exclusive jewelry products</p>
+  </div>
+
+  <div class="collections_carousel">
+    <div class="owl-carousel owl-theme">
+{% for i in jewelery %}
+    <div class="item" >
+    <div class="item_image">
+      <img src="{{i.image_small.url}}" alt="">
+    </div>
+      <div class="item_info">
+        <div class="item_title">
+          <p style="height:46px;">{{i.title}}</p>
+        </div>
+        <span></span>
+        <p>{{i.price}}</p>
+      </div>
+    </div>
+{% endfor %}
+    <!-- <div class="item" >
+    <div class="item_image">
+      <img src="{%static 'product/assets/collection_3.webp'%}" alt="">
+    </div>
+      <div class="item_info">
+        <h4>Demo Product 1</h4>
+        <span></span>
+        <p>$300</p>
+      </div>
+    </div>
+    <div class="item" >
+    <div class="item_image">
+      <img src="{%static 'product/assets/collection_4.webp'%}" alt="">
+    </div>
+      <div class="item_info">
+        <h4>Demo Product 1</h4>
+        <span></span>
+        <p>$300</p>
+      </div>
+    </div>
+    <div class="item" >
+    <div class="item_image">
+      <img src="{%static 'product/assets/collection_5.webp'%}" alt="">
+    </div>
+      <div class="item_info">
+        <h4>Demo Product 1</h4>
+        <span></span>
+        <p>$300</p>
+      </div>
+    </div>
+    <div class="item" >
+    <div class="item_image">
+      <img src="{%static 'product/assets/collection_6.webp'%}" alt="">
+    </div>
+      <div class="item_info">
+        <h4>Demo Product 1</h4>
+        <span></span>
+        <p>$300</p>
+      </div>
+    </div> -->
+    <!-- <div class="item" ><h4>2</h4></div>
+    <div class="item" ><h4>3</h4></div>
+    <div class="item" ><h4>4</h4></div>
+    <div class="item" ><h4>6</h4></div> -->
+</div>
+  </div>
+</div>
+<!-- section 2 -->
+
+
+
+
+
+
+
+<!-- section 3 -->
+<section class="contact">
+  <div class="contact_us">
+    <h1 id="contact_us" class="heading">Contact Us</h1>
+    <span></span>
+    <h5>We are excited to hear from you</h5>
+
+    <p class="content_text">Please submit any questions, concerns, or general feedback in the space below along with your name and email address.</p>
+<form action="" method="post">{% csrf_token %}
+    <div class="two_input">
+      <!-- <input type="text" placeholder="First Name" required> -->
+      {{form.first_name}}
+      {{form.last_name}}
+      <!-- <input type="text" placeholder="Last Name" required> -->
+    </div>
+    <div class="two_input">
+      <!-- <input type="text" placeholder="Email" required> -->
+      <!-- <input type="text" placeholder="Phone" required> -->
+      {{form.email}}
+      {{form.phone}}
+    </div>
+    <div class="text_input">
+    <!-- <input type="text" placeholder="Address"> -->
+    <!-- <textarea type="text" placeholder="Type your message here..." required></textarea> -->
+    {{form.address}}
+    {{form.message}}
+    </div>
+    <button class="contact_submit" type="submit">Submit</button>
+
+    <!-- <input type="submit" value="Save" /> -->
+
+  </form>
+  </div>
+
+</section>
+<!-- section 3 -->
+
+<!-- section 4 -->
+<div   class="gallery">
+  <div id="gallery" class="gallery_title">
+    <h1  class="heading">Gallery</h1>
+    <span></span>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+  </div>
+
+
+<!-- ---------------------------------------------- -->
+
+<div class="container2">
+  <div class="main-img">
+    {% if gallery.image_1 %}
+        <img src="{{gallery.image_1.url}}" id="current">
+    {% endif%}
+  </div>
+
+  <div class="imgs">
+    {% if gallery.image_1 %}
+        <img src="{{gallery.image_1.url}}">
+    {% endif%}
+    {% if gallery.image_2 %}
+        <img src="{{gallery.image_2.url}}">
+    {% endif%}
+    {% if gallery.image_3 %}
+        <img src="{{gallery.image_3.url}}">
+    {% endif%}
+    {% if gallery.image_4 %}
+        <img src="{{gallery.image_4.url}}">
+    {% endif%}
+    {% if gallery.image_5 %}
+        <img src="{{gallery.image_5.url}}">
+    {% endif%}
+    {% if gallery.image_6 %}
+        <img src="{{gallery.image_6.url}}">
+    {% endif%}
+    {% if gallery.image_7 %}
+        <img src="{{gallery.image_7.url}}">
+    {% endif%}
+    {% if gallery.image_8 %}
+        <img src="{{gallery.image_8.url}}">
+    {% endif%}
+  </div>
+</div>
+
+<!-- ----------------------------------------------------- -->
+</div>
+
+<!-- section 4 -->
+<footer>
+<div class="location">
+  <h2>Location</h2>
+  <p>Our collection and showroom is available at our East Cobb location</p>
+  <p>4651 Woodstock Rd #207, Roswell, GA 30075</p>
+</div>
+<div class="contact">
+  <h2>Contact Us</h2>
+  <p>770-643-9066</p>
+  <p>djdiamonds@bellsouth.net</p>
+</div>
+<div class="socials">
+  <h2>Socials</h2>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+</div>
+</footer>
+<!-- Footer -->
+<!-- copyright -->
+<div class="copyright">
+  <p>	&copy;Copyright 2019</p>
+</div>
+<!-- copyright -->
+<!-- nav up -->
+<div id="up" class="nav_up">
+  <a href="#catch"><i class="fas fa-arrow-circle-up"></i></a>
+</div>
+<!-- scripts -->
+<script src="https://kit.fontawesome.com/d43fb7b338.js" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- scripts -->
+<script type="text/javascript">
+$('.owl-carousel').owlCarousel({
+  margin:10,
+  loop:true,
+  autoWidth:true,
+  nav:true,
+  navText : ['<i class="fa fa-angle-left left_carousel" aria-hidden="true"></i>','<i class="fa fa-angle-right right_carousel" aria-hidden="true"></i>'],
+  items:4
+})
+document.querySelector('.owl-nav').className='owl-nav'
+document.querySelector('.owl-nav').addEventListener('click',()=>{
+  document.querySelector('.owl-nav').className='owl-nav'
+})
+// -----------------------------------------
+
+const current = document.querySelector('#current');
+const imgs = document.querySelector('.imgs');
+const img = document.querySelectorAll('.imgs img');
+const opacity = 0.6;
+
+// Set first img opacity
+img[0].style.opacity = opacity;
+
+imgs.addEventListener('click', imgClick);
+
+function imgClick(e) {
+  // Reset the opacity
+  img.forEach(img => (img.style.opacity = 1));
+
+  // Change current image to src of clicked image
+  current.src = e.target.src;
+
+  // Add fade in class
+  current.classList.add('fade-in');
+
+  // Remove fade-in class after .5 seconds
+  setTimeout(() => current.classList.remove('fade-in'), 500);
+
+  // Change the opacity to opacity var
+  e.target.style.opacity = opacity;
+}
+// ------------------------------------------------------------------
+
+
+var toggleButton  = document.querySelector('.toggle_bar')
+var navbarlinks  = document.querySelector('.menu_m')
+
+
+toggleButton.addEventListener('click',()=>{
+	if(navbarlinks.classList.toggle('active')){
+		navbarlinks.style.marginTop="0"
+	}
+	else{
+		navbarlinks.style.marginTop="-375px"
+	}
+})
+//-----------------------------------------------------------------
+document.querySelector('#id_first_name').placeholder='First Name'
+document.querySelector('#id_last_name').placeholder='Last Name'
+document.querySelector('#id_email').placeholder='Email'
+document.querySelector('#id_phone').placeholder='Phone'
+document.querySelector('#id_address').placeholder='Address'
+document.querySelector('#id_message').placeholder='Type your message....'
+
+
+
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script></body>
+</html>
+
+{% endblock content%}
